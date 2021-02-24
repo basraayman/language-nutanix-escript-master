@@ -1,0 +1,74 @@
+{
+	"scopeName": "source.escript",
+	"name": "EScript",
+	"fileTypes": [
+		"escript",
+	],
+    "patterns": [
+        {
+            "explanation": "Line continuation",
+            "match": "\\s*\\\\s*$",
+            "name": "constant.character.escape"
+        },
+        {
+            "match": "#.*",
+            "name": "comment.line.number-sign"
+        },
+        {
+            "begin": "'",
+            "end": "'",
+            "name": "string.quoted.single"
+        },
+        {
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double"
+        },
+        {
+            "match": "/?(\\S+/)+\\S*",
+            "name": "string.path"
+        },
+        {
+            "explanation": "project name",
+            "match": "^\\s*([A-Za-z0-9][A-Za-z0-9._-]*[A-Za-z0-9]|[A-Za-z0-9])",
+            "captures": {
+                "1": {
+                    "name": "entity.name.class"
+                }
+            }
+        },
+        {
+            "explanation": "extras",
+            "match": "\\[([^\\]]+)\\]",
+            "captures": {
+                "1": {
+                    "name": "entity.name.tag"
+                }
+            }
+        },
+        {
+            "explanation": "version specification",
+            "match": "(<|<=|!=|==|>=|>|~=|===)\\s*([\\w.*+!-]+)",
+            "captures": {
+                "1": {
+                    "name": "keyword.operator.comparison"
+                },
+                "2": {
+                    "name": "constant.numeric"
+                }
+            }
+        },
+        {
+            "explanation": "environment markers",
+            "match": ";\\s*(_datetime|re|difflib|base64|pprint|pformat|json|ujson|yaml|uuid|requests|boto3|azure|urlreq|exit|sleep|_construct_random_password|_is_bad_password|get_sql_handle|_shuffle|_randomchoose)\\s*(<|<=|!=|==|>=|>|~=|===)",
+            "captures": {
+                "1": {
+                    "name": "entity.name.selector"
+                },
+                "2": {
+                    "name": "keyword.operator.comparison"
+                }
+            }
+        }
+    ]	
+}

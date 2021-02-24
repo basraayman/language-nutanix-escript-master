@@ -1,0 +1,33 @@
+{
+    "name": "language-escript",
+    "displayName": "Nutanix EScript scripting language",
+    "version": "0.0.1",
+    "publisher": "basraayman",
+    "description": "Language support for the Nutanix EScript scripting language.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/basraayman/language-nutanix-escript-master.git"
+    },
+    "engines": {
+        "vscode": "^1.41.0",
+        "atom": "*",
+        "node": "*"
+    },
+    "license": "MIT",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "escript",
+            "aliases": ["Nutanix EScript", "EScript", "escript"],
+            "extensions": [".escript"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "escript",
+            "scopeName": "source.escript",
+            "path": "./grammars/escript.json"
+        }]
+    }
+}
