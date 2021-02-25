@@ -27,7 +27,10 @@
         "grammars": [{
             "language": "escript",
             "scopeName": "source.escript",
-            "path": "./grammars/escript.json"
+            "path": "./syntaxes/escript.tmLanguage.json",
+            "embeddedLanguages": {
+                "meta.embedded.block.python": "python"
+              }
         }]
     }
 }
